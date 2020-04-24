@@ -4,9 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>actuator</module>
-        <module>admin</module>
-        <module>autoconfig</module>
+
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
