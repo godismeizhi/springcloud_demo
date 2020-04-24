@@ -6,6 +6,7 @@
     <modules>
         <module>actuator</module>
         <module>admin</module>
+        <module>autoconfig</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
