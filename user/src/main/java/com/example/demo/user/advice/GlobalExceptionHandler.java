@@ -1,9 +1,8 @@
-package com.example.demo.common.advice;
+package com.example.demo.user.advice;
 
-import com.example.demo.common.response.ErrorInfo;
-import com.example.demo.common.response.RData;
-import com.example.demo.common.response.RCode;
-import lombok.experimental.Accessors;
+import com.example.demo.user.response.ErrorInfo;
+import com.example.demo.user.response.RData;
+import com.example.demo.user.response.RCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.example.demo.common.response;
+package com.example.demo.user.response;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
