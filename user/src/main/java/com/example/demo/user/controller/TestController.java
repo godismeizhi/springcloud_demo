@@ -18,6 +18,6 @@ public class TestController {
 
     @RequestMapping("/test")
     public RData test() {
-        return builer.setCode(RCode.SUCCESS).bulid();
+        return builer.setCode(RCode.SUCCESS).setData(instanceId).bulid();
     }
 }

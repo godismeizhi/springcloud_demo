@@ -22,6 +22,8 @@ public class GlobalExceptionHandler {
     @Value("${spring.application.name:not found}")
     private String applicationName;
 
+    @Value("${eureka.instance.instance-id}")
+    String instanceId;
 
     @Autowired
     private RData.Builer builer;
@@ -41,6 +43,7 @@ public class GlobalExceptionHandler {
         ErrorInfo errorInfo = errorInfoBuilder.setPath(path)
                 .setMethod(method)
                 .setApplicationName(applicationName)
+                .setInstanceId(instanceId)
                 .build();
 
         return builer.setCode(RCode.NOTFOUND)

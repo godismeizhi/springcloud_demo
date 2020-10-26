@@ -15,10 +15,13 @@ public class ErrorInfo {
 
     private String applicationName;
 
+    private String instanceId;
+
     private ErrorInfo(ErrorInfo.Builer builer) {
         this.method = builer.method;
         this.path = builer.path;
         this.applicationName = builer.applicationName;
+        this.instanceId = builer.instanceId;
     }
 
     @Component
@@ -30,6 +33,8 @@ public class ErrorInfo {
         private String path;
 
         private String applicationName;
+
+        private String instanceId;
 
         public ErrorInfo build() {
             return new ErrorInfo(this);
@@ -44,6 +49,11 @@ public class ErrorInfo {
 
         public Builer setPath(String path) {
             this.path = path;
+            return this;
+        }
+
+        public Builer setInstanceId(String instanceId) {
+            this.applicationName = instanceId;
             return this;
         }
 
