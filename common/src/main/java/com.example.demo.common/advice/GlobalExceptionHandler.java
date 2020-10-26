@@ -22,8 +22,8 @@ public class GlobalExceptionHandler {
     @Value("${spring.application.name:not found}")
     private String applicationName;
 
-    @Value("${eureka.instance.instance-id}")
-    String instanceId;
+    @Value("${eureka.instance.instance-id:not found}")
+    private String instanceId;
 
     @Autowired
     private RData.Builer builer;

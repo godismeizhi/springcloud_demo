@@ -53,7 +53,7 @@ public class ErrorInfo {
         }
 
         public Builer setInstanceId(String instanceId) {
-            this.applicationName = instanceId;
+            this.instanceId = instanceId;
             return this;
         }
 
