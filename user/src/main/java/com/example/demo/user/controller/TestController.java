@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    @Value("${eureka.instance.instance-id}")
+    @Value("${spring.cloud.consul.discovery.instanceId}")
     String instanceId;
 
     @Autowired

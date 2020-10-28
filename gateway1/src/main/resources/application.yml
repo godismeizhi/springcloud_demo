@@ -1,0 +1,29 @@
+spring:
+  redis:
+    host: 192.168.1.113
+    port: 6380
+  cloud:
+    gateway:
+      routes:
+      - id: user
+        uri: lb://user
+        predicates:
+        - Path=/user/**
+        filters:
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: 20 #允许用户每秒处理多少个请求
+            redis-rate-limiter.burstCapacity: 40 #令牌桶的容量，允许在一秒钟内完成的最大请求数
+            key-resolver: "#{@ipKeyResolver}"  #使用SpEL按名称引用bean
+        - name: Retry
+          args:
+            retries: 3
+            series:
+              - SERVER_ERROR
+            statuses:
+              - OK
+            methods:
+              - GET
+              - POST
+            exceptions:
+              - java.io.IOException

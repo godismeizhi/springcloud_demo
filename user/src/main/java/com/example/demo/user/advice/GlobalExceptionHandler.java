@@ -21,7 +21,7 @@ public class GlobalExceptionHandler {
     @Value("${spring.application.name:not found}")
     private String applicationName;
 
-    @Value("${eureka.instance.instance-id:not found}")
+    @Value("${spring.cloud.consul.discovery.instanceId:not found}")
     private String instanceId;
 
     @Autowired
