@@ -1,4 +1,5 @@
-package com.example.demo.user.response;
+package com.exapmle.demo.common.response;
+
 
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -24,7 +25,6 @@ public class ErrorInfo {
         this.instanceId = builer.instanceId;
     }
 
-    @Component
     @Accessors(chain = true)
     public static class Builer {
 

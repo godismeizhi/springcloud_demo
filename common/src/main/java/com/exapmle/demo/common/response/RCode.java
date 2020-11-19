@@ -1,4 +1,4 @@
-package com.example.demo.user.response;
+package com.exapmle.demo.common.response;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -6,11 +6,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class RCode {
 
 
-    public static String SUCCESS = "200";
+    public static final String SUCCESS = "200";
 
-    public static String NOTFOUND = "404";
+    public static final String NOTFOUND = "404";
 
-    public static String SYSERROR = "500";
+    public static final String SYSERROR = "500";
 
 
     public static Map<String, String> infos = new ConcurrentHashMap<>();

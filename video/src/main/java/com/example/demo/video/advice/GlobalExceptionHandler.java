@@ -1,4 +1,4 @@
-package com.example.demo.user.advice;
+package com.example.demo.video.advice;
 
 import com.exapmle.demo.common.response.ErrorInfo;
 import com.exapmle.demo.common.response.RCode;

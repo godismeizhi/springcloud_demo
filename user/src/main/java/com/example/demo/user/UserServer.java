@@ -7,7 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@ComponentScan("com.example.demo")
 public class UserServer {
     public static void main(String[] args) {
         SpringApplication.run(UserServer.class, args);

@@ -1,6 +1,6 @@
-package com.example.demo.user.controller;
+package com.example.demo.video.controller;
 
-import com.example.demo.user.response.UserCode;
+import com.example.demo.video.response.VideoCode;
 import com.exapmle.demo.common.response.RData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,6 +18,6 @@ public class TestController {
 
     @RequestMapping("/test")
     public RData test() {
-        return builer.setCode(UserCode.SUCCESS).setData(instanceId).bulid();
+        return builer.setCode(VideoCode.SUCCESS).setData(instanceId).bulid();
     }
 }
