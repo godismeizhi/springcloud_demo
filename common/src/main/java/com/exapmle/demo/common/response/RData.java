@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Accessors(chain = true)
-@JsonInclude(JsonInclude.Include.NON_DEFAULT )
+@JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class RData<T> {
 
 
