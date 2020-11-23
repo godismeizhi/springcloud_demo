@@ -1,9 +1,13 @@
-package com.example.demo.user.sysinfo.config;
+package com.exapmle.demo.common.config;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -13,16 +17,24 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
+@Slf4j
+@ConditionalOnClass(ObjectMapper.class)
+@EnableConfigurationProperties(JackJsonSerializerProperties.class)
 @Configuration
 public class LocalDateTimeSerializerConfig {
 
+    @Autowired
+    private JackJsonSerializerProperties jackJsonSerializerProperties;
+
     /**
      * 序列化LocalDateTime
+     *
      * @return
      */
     @Bean
     @Primary
     public ObjectMapper serializingObjectMapper() {
+        log.info("===========jackjson===========LocalDateTime转时间戳初始化=============");
         ObjectMapper objectMapper = new ObjectMapper();
         JavaTimeModule javaTimeModule = new JavaTimeModule();
         javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer());
@@ -38,7 +50,7 @@ public class LocalDateTimeSerializerConfig {
         @Override
         public void serialize(LocalDateTime value, JsonGenerator gen, SerializerProvider serializers)
                 throws IOException {
-            if (value != null){
+            if (value != null) {
                 long timestamp = value.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
                 gen.writeNumber(timestamp);
             }
@@ -53,9 +65,9 @@ public class LocalDateTimeSerializerConfig {
         public LocalDateTime deserialize(JsonParser p, DeserializationContext deserializationContext)
                 throws IOException {
             long timestamp = p.getValueAsLong();
-            if (timestamp > 0){
-                return LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp),ZoneId.systemDefault());
-            }else{
+            if (timestamp > 0) {
+                return LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), ZoneId.systemDefault());
+            } else {
                 return null;
             }
         }

@@ -16,4 +16,7 @@
         <module>video-bussiness</module>
     </modules>
 
+    <dependencies>
+
+    </dependencies>
 </project>
