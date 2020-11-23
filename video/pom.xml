@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>video-api</module>
-        <module>video-bussiness</module>
+        <module>video-business</module>
     </modules>
 
     <dependencies>
