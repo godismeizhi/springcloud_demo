@@ -1,3 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.exapmle.demo.common.config.LocalDateTimeSerializerConfig
+  com.exapmle.demo.common.config.LocalDateTimeSerializerConfig,\
+  com.exapmle.demo.common.config.ServerHealthIndicatorConfig
+  
 
